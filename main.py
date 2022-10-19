@@ -13,7 +13,6 @@ from flask_gravatar import Gravatar
 import bleach
 
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
@@ -88,6 +87,7 @@ gravatar = Gravatar(app,
                     force_lower=False,
                     use_ssl=False,
                     base_url=None)
+
 
 # SOME FUNCTIONS
 # Admin only decorator function
