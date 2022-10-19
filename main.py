@@ -69,8 +69,8 @@ class Comments(db.Model, Base, UserMixin):
 
 
 # Use this the first time. Just to create the DB
-# with app.app_context():
-    # db.create_all()
+with app.app_context():
+    db.create_all()
 # This function creates an admin by default, you must use it when you are creating the DB
 # create_admin()
 
