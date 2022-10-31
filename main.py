@@ -20,7 +20,7 @@ ckeditor = CKEditor(app)
 Bootstrap4(app)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL1")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL1", "sqlite:///blog.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -69,8 +69,8 @@ class Comments(db.Model, Base, UserMixin):
 
 
 # Use this the first time. Just to create the DB
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#    db.create_all()
 # This function creates an admin by default, you must use it when you are creating the DB
 # create_admin()
 
